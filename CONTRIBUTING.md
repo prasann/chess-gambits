@@ -33,6 +33,12 @@ Prefer a small, well-explained repertoire over many unreviewed lines.
    legality, and available counts, **not** strategic truth. Have a human review
    the content before treating it as authoritative.
 
+6. Optionally add two `modelGames`: one where the gambit works and one where
+   the defence holds. Find candidates in the
+   [Lichess opening explorer](https://lichess.org/analysis) on the Masters tab,
+   open a game, and copy its PGN moves and `lichess.org/<id>` link. Write
+   your own notes. Run `npm run validate` to check them.
+
 The app discovers JSON files automatically; no route, registry, or controller
 edits are needed. See [the format reference](docs/gambit-format.md).
 
@@ -45,6 +51,14 @@ edits are needed. See [the format reference](docs/gambit-format.md).
 > source set to the documented masters explorer. Explain uncertainties for human
 > review. Run source:weights, validate, and tests; fix reported issues rather than
 > weakening validation.
+
+For model games:
+
+> Add `modelGames` to <file>: one real master game won by the gambit side and
+> one where the defender won or drew on the merits. Copy the moves exactly from
+> the cited Lichess PGN. Write 4–6 original moments, each linked to an idea key,
+> with at most 3 arrows. Engine-check every moment. Never invent games, players,
+> or results; if you cannot verify a game, say so.
 
 ## Development
 

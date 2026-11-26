@@ -3,13 +3,22 @@ import { Board } from '../../components/Board'
 import { Ideas } from '../../components/Ideas'
 import { bookReply, compileBook, cursorAt, gameResult, playerColor, replay, setupMoves, uci, undoDecision, type Gambit } from '../../domain/gambit'
 import { moveFeedback } from '../../domain/feedback'
+import { moveLabel, parseModelGame, type ModelGame } from '../../domain/modelGame'
 import { SearchCancelled, Stockfish, strengths, type Strength } from '../../engine/stockfish'
 
-export function Practice({ gambit }: { gambit: Gambit }) {
+export interface PracticeStart { game: ModelGame; ply: number }
+
+export function Practice({ gambit, start, notice }: { gambit: Gambit; start?: PracticeStart; notice?: string }) {
   const setup = useMemo(() => setupMoves(gambit), [gambit])
   const book = useMemo(() => compileBook(gambit), [gambit])
-  const [moves, setMoves] = useState<string[]>([])
-  const [settingUp, setSettingUp] = useState(true)
+  const parsed = useMemo(() => start && parseModelGame(start.game), [start])
+  const seed = useMemo(() => parsed && start ? parsed.uci.slice(0, start.ply) : [], [parsed, start])
+  const floor = start ? start.ply : setup.length
+  const floorHuman = replay(seed).turn() === playerColor(gambit) && !!start
+  const [moves, setMoves] = useState<string[]>(seed)
+  const [settingUp, setSettingUp] = useState(!start)
+  const [startHint, setStartHint] = useState<string>()
+  const startChecked = useRef(!start)
   const [strength, setStrength] = useState<Strength>('relaxed')
   const [hidden, setHidden] = useState(document.hidden)
   const [status, setStatus] = useState('Setting the scene...')
@@ -20,7 +29,7 @@ export function Practice({ gambit }: { gambit: Gambit }) {
   const lastHuman = useRef<{ before: string[]; after: string[] } | null>(null)
   const game = useMemo(() => replay(moves), [moves])
   const cursor = cursorAt(book, moves.slice(setup.length))
-  const inBook = moves.length >= setup.length && !!cursor?.children.size
+  const inBook = !start && moves.length >= setup.length && !!cursor?.children.size
   const result = gameResult(game)
   const humanTurn = game.turn() === playerColor(gambit)
   const canPlay = !settingUp && !hidden && !error && !result && humanTurn
@@ -66,8 +75,18 @@ export function Practice({ gambit }: { gambit: Gambit }) {
           lastHuman.current = null
         }
         if (!active) return
+        if (!startChecked.current) {
+          setStatus('Reading the position...')
+          const score = await engine.evaluate(moves)
+          if (!active) return
+          startChecked.current = true
+          const mine = score && score.value * (gambit.side === 'white' ? 1 : -1)
+          if (score && mine !== undefined && (score.kind === 'mate' ? mine < 0 : mine <= -300)) {
+            setStartHint('Stockfish already rates this position as lost for your side. Treat it as a defensive exercise.')
+          }
+        }
         if (humanTurn) { setStatus('Your move. Put the idea into practice.'); return }
-        const reply = bookReply(gambit, cursor, game)
+        const reply = start ? undefined : bookReply(gambit, cursor, game)
         if (reply) {
           setStatus('Choosing a reply from recorded games...')
           await new Promise((resolve) => setTimeout(resolve, 420))
@@ -90,7 +109,7 @@ export function Practice({ gambit }: { gambit: Gambit }) {
     }
     void computer().finally(() => { working = false })
     return () => { active = false; if (working) engine.cancel() }
-  }, [moves, strength, hidden, settingUp, result, error, retry, gambit, book, engine, cursor, game, humanTurn, inBook])
+  }, [moves, strength, hidden, settingUp, result, error, retry, gambit, book, engine, cursor, game, humanTurn, inBook, start])
 
   function move(value: string) {
     if (!canPlay) return
@@ -104,16 +123,16 @@ export function Practice({ gambit }: { gambit: Gambit }) {
     lastHuman.current = null
     setError(undefined)
     setFeedback(undefined)
-    setMoves([])
-    setSettingUp(true)
-    setStatus('Setting the scene...')
+    setMoves(seed)
+    setSettingUp(!start)
+    setStatus(start ? 'Back to the model game position.' : 'Setting the scene...')
   }
   function undo() {
     engine.cancel()
     lastHuman.current = null
     setError(undefined)
     setFeedback(undefined)
-    setMoves([...undoDecision(gambit, moves)])
+    setMoves([...undoDecision(gambit, moves, floor)])
   }
 
   return <main className="practice-page">
@@ -122,9 +141,15 @@ export function Practice({ gambit }: { gambit: Gambit }) {
       <h1>{gambit.name}</h1>
       <span className="muted">You play {gambit.side}</span>
     </div>
+    {notice && <p className="practice-banner" role="status">{notice}</p>}
+    {start && parsed && <div className="practice-banner from-game" data-testid="practice-from-banner">
+      <p>From <strong>{start.game.white} – {start.game.black}</strong>, {start.game.event} {start.game.year} · after {moveLabel(start.ply, parsed.san[start.ply - 1])}. Stockfish plays the rest.</p>
+      <div><a href={`#/gambit/${gambit.id}?game=${start.game.id}&ply=${start.ply}`}>Back to game</a><a href={`#/practice/${gambit.id}`}>Start from the gambit</a></div>
+      {startHint && <p className="start-hint">{startHint}</p>}
+    </div>}
     <div className="practice-layout">
       <section className="play-column" aria-label="Practice position">
-        <div className="opponent-label"><span className="avatar">SF</span><span>Practice partner <small>Recorded games + Stockfish 19</small></span><span className="live-dot" /></div>
+        <div className="opponent-label"><span className="avatar">SF</span><span>Practice partner <small>{start ? 'Stockfish 19, no opening book' : 'Recorded games + Stockfish 19'}</small></span><span className="live-dot" /></div>
         <Board key={`${gambit.id}-${moves.length < setup.length ? 'setup' : moves.join('-')}`} game={game} side={gambit.side} interactive={!!canPlay} onMove={move} />
         <p className="sr-only" aria-live="polite" aria-atomic="true">{!settingUp && moves.length ? `${moves.length % 2 ? 'White' : 'Black'} played ${game.history().at(-1)}.` : ''}</p>
         <div className="practice-controls">
@@ -133,7 +158,7 @@ export function Practice({ gambit }: { gambit: Gambit }) {
             <span className="turn-label">{hidden ? 'Paused' : result ? 'Game over' : humanTurn ? 'Your turn' : "Partner's turn"}</span>
           </div>
           <div className="control-actions">
-            <button onClick={undo} disabled={settingUp || moves.length <= setup.length + (humanTurn ? 1 : 0)} aria-label="Undo last turn">Undo</button>
+            <button onClick={undo} disabled={settingUp || moves.length <= floor + (humanTurn && !floorHuman ? 1 : 0)} aria-label="Undo last turn">Undo</button>
             <button onClick={reset}>Restart</button>
             <label className="strength-label"><span className="sr-only">Engine strength</span>
               <select aria-label="Engine strength" value={strength} onChange={(event) => setStrength(event.target.value as Strength)}>
@@ -152,11 +177,11 @@ export function Practice({ gambit }: { gambit: Gambit }) {
         <details className="panel">
           <summary>Move history <span className="muted">{moves.length} plies</span></summary>
           <ol className="move-list" aria-label="Played moves" data-testid="move-history">
-            {game.history().map((san, index) => <li key={index} className={index < setup.length ? 'setup-move' : ''}>
+            {game.history().map((san, index) => <li key={index} className={index < floor ? 'setup-move' : ''}>
               {index % 2 === 0 && <span className="move-number">{Math.floor(index / 2) + 1}.</span>}{san}
             </li>)}
           </ol>
-          <p className="fine-print">Faded moves set up the gambit. A new move can leave the book without being a mistake.</p>
+          <p className="fine-print">{start ? 'Faded moves come from the model game.' : 'Faded moves set up the gambit. A new move can leave the book without being a mistake.'}</p>
         </details>
         <details className="panel ideas-panel">
           <summary>The ideas, not the answers</summary>

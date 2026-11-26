@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Board } from './components/Board'
 import { Ideas } from './components/Ideas'
 import { gambits } from './gambits'
 import { replay, type Gambit } from './domain/gambit'
 import { pieceSets, setPieceSet, usePieceSet, type PieceSet } from './pieceSets'
-import { Practice } from './features/practice/Practice'
+import { Practice, type PracticeStart } from './features/practice/Practice'
+import { ModelGames } from './features/model-games/ModelGame'
+import { parseModelGame } from './domain/modelGame'
 
 function Mark({ small = false }: { small?: boolean }) {
   return <svg className={small ? 'brand-mark small' : 'brand-mark'} viewBox="0 0 40 40" aria-hidden="true">
@@ -65,7 +67,11 @@ function GambitCard({ gambit, index }: { gambit: Gambit; index: number }) {
   </a>
 }
 
-function Detail({ gambit }: { gambit: Gambit }) {
+function Detail({ gambit, params }: { gambit: Gambit; params: URLSearchParams }) {
+  const ply = params.get('ply')
+  useEffect(() => {
+    if (params.get('game')) document.getElementById('model-games')?.scrollIntoView()
+  }, [params])
   return <main className="detail-page page-width">
     <a className="back-link" href="#/">Back to collection</a>
     <div className="detail-layout">
@@ -80,6 +86,10 @@ function Detail({ gambit }: { gambit: Gambit }) {
         <div className="preview-caption"><span className="eyebrow">Your starting position</span><p>The offer is on the board. See how your partner responds.</p>
           <a className="primary-button full-width" href={`#/practice/${gambit.id}`}>Practice this gambit <span aria-hidden="true">↗</span></a>
           <p className="fine-print">No forced line. Play any legal move.</p>
+          {gambit.modelGames && <a className="secondary-link" href="#model-games" onClick={(event) => {
+            event.preventDefault()
+            document.getElementById('model-games')?.scrollIntoView()
+          }}>Or replay two master games first <span aria-hidden="true">↓</span></a>}
         </div>
         <details className="source-details"><summary>About this repertoire</summary>
           <p>{gambit.lines.length} curated branches. {gambit.source.note}</p>
@@ -87,7 +97,19 @@ function Detail({ gambit }: { gambit: Gambit }) {
         </details>
       </aside>
     </div>
+    {gambit.modelGames && <ModelGames gambit={gambit} key={params.toString()} initialGame={params.get('game') ?? undefined} initialPly={ply === null ? undefined : Number(ply)} />}
   </main>
+}
+
+function practiceStart(gambit: Gambit, params: URLSearchParams): { start?: PracticeStart; notice?: string } {
+  const gameId = params.get('game')
+  if (!gameId) return {}
+  const game = gambit.modelGames?.find((item) => item.id === gameId)
+  const ply = Number(params.get('ply'))
+  if (!game || !Number.isInteger(ply) || ply < gambit.setup.length || ply > parseModelGame(game).san.length) {
+    return { notice: 'That model game position could not be found, so practice starts from the gambit instead.' }
+  }
+  return { start: { game, ply } }
 }
 
 export default function App() {
@@ -99,7 +121,9 @@ export default function App() {
     window.addEventListener('hashchange', change)
     return () => window.removeEventListener('hashchange', change)
   }, [])
-  const [, view, id] = hash.replace('#', '').split('/')
+  const [path, query = ''] = hash.replace('#', '').split('?')
+  const [, view, id] = path.split('/')
+  const params = useMemo(() => new URLSearchParams(query), [query])
   const gambit = gambits.find((item) => item.id === id)
   const practice = view === 'practice' && gambit
   const base = import.meta.env.BASE_URL
@@ -121,8 +145,8 @@ export default function App() {
       </nav>
     </header>
     <div id="main-content" tabIndex={-1}>
-      {view === 'practice' && gambit ? <Practice gambit={gambit} key={gambit.id} />
-        : view === 'gambit' && gambit ? <Detail gambit={gambit} />
+      {view === 'practice' && gambit ? <Practice gambit={gambit} key={`${gambit.id}?${query}`} {...practiceStart(gambit, params)} />
+        : view === 'gambit' && gambit ? <Detail gambit={gambit} params={params} />
           : !view || hash === '#library' ? <Library />
             : <main className="page-width not-found"><h1>That position is not in our collection.</h1><a href="#/">Back to the library</a></main>}
     </div>
