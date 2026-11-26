@@ -160,5 +160,190 @@
         "b6a7": 2
       }
     }
-  }
+  },
+  "modelGames": [
+    {
+      "id": "kasparov-anand-1995",
+      "kind": "gambit-works",
+      "white": "Garry Kasparov",
+      "black": "Viswanathan Anand",
+      "event": "Tal Memorial",
+      "site": "Riga",
+      "year": 1995,
+      "timeControl": "classical",
+      "result": "1-0",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Be7 6. d4 Na5 7. Be2 exd4 8. Qxd4 Nf6 9. e5 Nc6 10. Qh4 Nd5 11. Qg3 g6 12. O-O Nb6 13. c4 d6 14. Rd1 Nd7 15. Bh6 Ncxe5 16. Nxe5 Nxe5 17. Nc3 f6 18. c5 Nf7 19. cxd6 cxd6 20. Qe3 Nxh6 21. Qxh6 Bf8 22. Qe3+ Kf7 23. Nd5 Be6 24. Nf4 Qe7 25. Re1",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/rCR5rWCS",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "A modern revival of the Evans. White uses the tempo gained against the bishop to seize space with e5, keeps Black's king in the centre and opens files just as the defender runs out of time.",
+      "moments": [
+        {
+          "ply": 17,
+          "title": "Space with tempo",
+          "note": "e5 drives the knight away from f6. White has spent the b-pawn, but in return every move gains time and Black still has not castled.",
+          "idea": "idea",
+          "highlights": [
+            "e5"
+          ],
+          "arrows": [
+            [
+              "e5",
+              "f6"
+            ]
+          ]
+        },
+        {
+          "ply": 21,
+          "title": "Pressure on g7",
+          "note": "The queen targets g7, provoking a weakening pawn move. Small concessions around the king add up when the attacker is ahead in development.",
+          "idea": "motifs",
+          "arrows": [
+            [
+              "g3",
+              "g7"
+            ]
+          ]
+        },
+        {
+          "ply": 29,
+          "title": "No castling allowed",
+          "note": "The bishop takes the f8 square away from Black's king. White is even willing to let the e5 pawn go if it keeps the king stuck in the centre.",
+          "idea": "pieces",
+          "highlights": [
+            "h6",
+            "e8"
+          ],
+          "arrows": [
+            [
+              "h6",
+              "f8"
+            ]
+          ]
+        },
+        {
+          "ply": 39,
+          "title": "Files open, king exposed",
+          "note": "Pawn exchanges in the centre have opened lines, and the queen moves to the e-file. The king in the middle is now the main target.",
+          "idea": "motifs",
+          "highlights": [
+            "e8"
+          ],
+          "arrows": [
+            [
+              "e3",
+              "e7"
+            ]
+          ]
+        },
+        {
+          "ply": 49,
+          "title": "Everything points at e6",
+          "note": "Queen, rook and knight all aim at the bishop on e6, and Bc4 would pin it to the king. Black has a pawn more, but no way to untangle in time.",
+          "highlights": [
+            "e6",
+            "f7"
+          ],
+          "arrows": [
+            [
+              "f4",
+              "e6"
+            ],
+            [
+              "e2",
+              "c4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morozevich-adams-2001",
+      "kind": "defense-holds",
+      "white": "Alexander Morozevich",
+      "black": "Michael Adams",
+      "event": "Corus",
+      "site": "Wijk aan Zee",
+      "year": 2001,
+      "timeControl": "classical",
+      "result": "0-1",
+      "moves": "1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O Nge7 8. Ng5 d5 9. exd5 Ne5 10. Bb3 O-O 11. cxd4 Ng4 12. Qf3 Nf6 13. Ba3 h6 14. Ne4 Nxe4 15. Qxe4 Re8 16. Bb2 Nf5 17. Qf4 Bb4 18. Na3 Bd6 19. Qd2 Qh4 20. g3 Qh3 21. Nc4 b5 22. Ne5 Bb7 23. Rae1 a5 24. a3 b4 25. axb4 Bxb4 26. Bc3 Bxc3 27. Qxc3 Nh4",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/qJ5VidxJ",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "Black meets the gambit with a timely ...d5, gives the pawn back and castles. With his king safe, he targets White's isolated central pawns and ends up attacking White's king.",
+      "moments": [
+        {
+          "ply": 16,
+          "title": "Return the pawn, free the game",
+          "note": "...d5 hands a pawn back but opens lines for Black's pieces. Defenders rarely hold every gambit pawn; they aim for safe development instead.",
+          "highlights": [
+            "d5"
+          ],
+          "arrows": [
+            [
+              "d5",
+              "e4"
+            ]
+          ]
+        },
+        {
+          "ply": 20,
+          "title": "King safety first",
+          "note": "Black castles before anything else. Once the king is tucked away, White's lead in development has no obvious target.",
+          "highlights": [
+            "g8"
+          ]
+        },
+        {
+          "ply": 30,
+          "title": "Targets in White's centre",
+          "note": "White's d-pawns look imposing but cannot be supported by other pawns. Black's rook on the e-file and knight heading for f5 are ready to work against them.",
+          "highlights": [
+            "d4",
+            "d5"
+          ],
+          "arrows": [
+            [
+              "e7",
+              "f5"
+            ]
+          ]
+        },
+        {
+          "ply": 40,
+          "title": "A queen next to the king",
+          "note": "The black queen settles on h3, right next to White's king. Defending a gambit often ends with the defender taking over the initiative.",
+          "highlights": [
+            "h3",
+            "g1"
+          ]
+        },
+        {
+          "ply": 54,
+          "title": "Mate on g2 is coming",
+          "note": "The knight joins the queen, threatening mate on g2. Black's pieces are coordinated while White's are scattered—the opposite of what the gambit intended.",
+          "highlights": [
+            "g2"
+          ],
+          "arrows": [
+            [
+              "h3",
+              "g2",
+              "red"
+            ],
+            [
+              "h4",
+              "g2",
+              "red"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -17,9 +17,15 @@ interface Props {
   side: 'white' | 'black'
   interactive?: boolean
   onMove?: (move: string) => void
+  id?: string
+  arrows?: readonly (readonly string[])[]
+  highlights?: readonly string[]
+  label?: string
 }
 
-export function Board({ game, side, interactive = false, onMove }: Props) {
+const arrowColors: Record<string, string> = { default: 'rgba(214, 140, 40, 0.85)', red: 'rgba(200, 55, 70, 0.85)' }
+
+export function Board({ game, side, interactive = false, onMove, id = 'practice-board', arrows = [], highlights = [], label }: Props) {
   const [selected, setSelected] = useState<Square | null>(null)
   const [promotion, setPromotion] = useState<{ from: string; to: string } | null>(null)
   const pieceSet = usePieceSet()
@@ -33,6 +39,7 @@ export function Board({ game, side, interactive = false, onMove }: Props) {
     styles[last.from] = { boxShadow: 'inset 0 0 0 100px var(--cp-board-last-move)' }
     styles[last.to] = { boxShadow: 'inset 0 0 0 100px var(--cp-board-last-move)' }
   }
+  for (const square of highlights) styles[square] = { ...styles[square], boxShadow: 'inset 0 0 0 100px var(--cp-board-highlight)' }
   if (selected) styles[selected] = { boxShadow: 'inset 0 0 0 4px var(--cp-accent)' }
   for (const move of legal) {
     styles[move.to] = { ...styles[move.to], backgroundImage: 'radial-gradient(var(--cp-accent) 17%, transparent 20%)' }
@@ -57,9 +64,10 @@ export function Board({ game, side, interactive = false, onMove }: Props) {
     setSelected(game.get(square)?.color === game.turn() ? square : null)
   }
 
-  return <div className="board-frame" inert={!interactive} aria-label={`${side} side chessboard`}>
+  return <div className="board-frame" inert={!interactive} aria-label={label ?? `${side} side chessboard`}>
     <Chessboard options={{
-      id: 'practice-board',
+      id,
+      arrows: arrows.map(([from, to, color]) => ({ startSquare: from, endSquare: to, color: arrowColors[color ?? 'default'] })),
       position: game.fen(),
       boardOrientation: side,
       pieces,

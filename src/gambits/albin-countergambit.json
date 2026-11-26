@@ -146,5 +146,189 @@
         "e2e3": 2
       }
     }
-  }
+  },
+  "modelGames": [
+    {
+      "id": "sokolov-morozevich-2005",
+      "kind": "gambit-works",
+      "white": "Ivan Sokolov",
+      "black": "Alexander Morozevich",
+      "event": "Corus",
+      "site": "Wijk aan Zee",
+      "year": 2005,
+      "timeControl": "classical",
+      "result": "0-1",
+      "moves": "1. d4 d5 2. c4 e5 3. dxe5 d4 4. Nf3 Nc6 5. Nbd2 Nge7 6. Nb3 Nf5 7. a3 Be7 8. g3 a5 9. Qd3 a4 10. Nbd2 h5 11. Bh3 g6 12. Ne4 h4 13. Bf4 hxg3 14. hxg3 Ng7 15. Bg2 Rxh1+ 16. Bxh1 Bf5 17. Nfg5 Na5 18. Qf3 Ne6 19. Nh7 Bxe4 20. Qxe4 c6 21. e3 Nb3 22. Rd1 Qa5+ 23. Ke2 Nec5 24. Qg2 Qa6 25. Kf1 Qxc4+ 26. Kg1 Qc2 27. Qf3 d3 28. Bg5 Ne4 29. Bxe7 Nxf2 30. Qxf2 Qxd1+ 31. Kg2 Qc2 32. Bd6 O-O-O 33. Kg1 Qxf2+ 34. Kxf2 Rh8",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/u4KGiETJ",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "Black uses the d4 wedge to cramp White, attacks with the h-pawn and takes over the light squares. When White's pieces drift, Black's knights invade and the d-pawn becomes a monster.",
+      "moments": [
+        {
+          "ply": 6,
+          "title": "The d4 wedge",
+          "note": "Black's pawn on d4 takes away natural squares from White's knights and makes e3 harder to play. This space advantage is Black's main compensation.",
+          "idea": "structure",
+          "highlights": [
+            "d4"
+          ]
+        },
+        {
+          "ply": 20,
+          "title": "The h-pawn attack",
+          "note": "...h5 heads for h4 to open the h-file toward White's fianchettoed king. A rook behind the pawn turns the open file into an attacking lane.",
+          "idea": "motifs",
+          "arrows": [
+            [
+              "h5",
+              "h4"
+            ]
+          ]
+        },
+        {
+          "ply": 42,
+          "title": "A knight on b3",
+          "note": "The knight lands on b3, a hole fixed by the a4 pawn. It attacks the rook on a1 and keeps White tied up on the queenside.",
+          "idea": "pieces",
+          "highlights": [
+            "b3",
+            "a4"
+          ],
+          "arrows": [
+            [
+              "b3",
+              "a1"
+            ]
+          ]
+        },
+        {
+          "ply": 50,
+          "title": "Pawn back, king exposed",
+          "note": "Black regains the pawn on c4 with check. White's king stays in the centre, and Black's queen is very active.",
+          "highlights": [
+            "c4",
+            "f1"
+          ]
+        },
+        {
+          "ply": 58,
+          "title": "A deflection",
+          "note": "The knight sacrifice on f2 pulls the queen away from defending d1. Active pieces create tactics like this.",
+          "highlights": [
+            "f2",
+            "d1"
+          ],
+          "arrows": [
+            [
+              "c2",
+              "d1",
+              "red"
+            ]
+          ]
+        },
+        {
+          "ply": 68,
+          "title": "Material and the open file",
+          "note": "Black ends up ahead in material and takes the h-file. The d-pawn, which started as a wedge, is now a passed pawn near promotion.",
+          "highlights": [
+            "d3"
+          ],
+          "arrows": [
+            [
+              "h8",
+              "h1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gligoric-ljubojevic-1975",
+      "kind": "defense-holds",
+      "white": "Svetozar Gligoric",
+      "black": "Ljubomir Ljubojevic",
+      "event": "Portoroz/Ljubljana",
+      "site": "Ljubljana",
+      "year": 1975,
+      "timeControl": "classical",
+      "result": "1-0",
+      "moves": "1. d4 d5 2. c4 e5 3. dxe5 d4 4. Nf3 Nc6 5. g3 Be6 6. Nbd2 Qd7 7. Bg2 f6 8. exf6 Nxf6 9. O-O Bh3 10. Nb3 O-O-O 11. Bg5 Qg4 12. Qd2 Bd6 13. Bxf6 gxf6 14. Qh6 Bxg2 15. Kxg2 Rhe8 16. Rad1 Bf8 17. Qxh7 Rxe2 18. h3 Qd7 19. Qxd7+ Rxd7 20. Nfxd4 Nxd4 21. Nxd4 Rxb2 22. Rfe1 Rd8 23. Ne6 Rxd1 24. Rxd1 Bd6 25. h4 Kd7 26. Ng7 Ke7 27. Nf5+ Ke6 28. Nxd6 cxd6 29. h5 Rxa2 30. h6 Kf7 31. Rxd6 Kg6 32. h7 Kxh7 33. Rxf6 Kg7 34. Rd6 Rb2 35. c5 a5 36. c6 bxc6 37. Rxc6 a4 38. Ra6 Ra2 39. g4 a3 40. Kg3 Ra1 41. Kf4 Kf7 42. Kf5 Ke7 43. g5 Ra2 44. f4 Ra1 45. Kg6",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/TrbAFA5Z",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "White fianchettoes, targets the d4 pawn and ruins Black's kingside structure. Black's activity runs out, the wedge falls and White's extra pawns win the endgame.",
+      "moments": [
+        {
+          "ply": 13,
+          "title": "The long diagonal",
+          "note": "White's bishop on g2 points at b7 and supports a later attack on d4. The fianchetto is a reliable way to blunt the Albin's piece play.",
+          "highlights": [
+            "g2",
+            "b7"
+          ]
+        },
+        {
+          "ply": 19,
+          "title": "Target the wedge",
+          "note": "Both knights now eye d4. Once that pawn falls, Black's main compensation disappears.",
+          "idea": "structure",
+          "highlights": [
+            "d4"
+          ],
+          "arrows": [
+            [
+              "b3",
+              "d4"
+            ],
+            [
+              "f3",
+              "d4"
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "title": "A broken kingside",
+          "note": "White exchanged bishop for knight to wreck Black's pawns. The doubled f-pawns and weak h7 give White long-term targets.",
+          "highlights": [
+            "f6",
+            "f7",
+            "h7"
+          ]
+        },
+        {
+          "ply": 41,
+          "title": "The d4 pawn falls",
+          "note": "White wins the d4 pawn. Black has some activity left, but White has an extra pawn and the better structure.",
+          "idea": "caution",
+          "highlights": [
+            "d4"
+          ]
+        },
+        {
+          "ply": 57,
+          "title": "A runaway h-pawn",
+          "note": "White's passed h-pawn advances and draws Black's king to the corner. Passed pawns stretch the defence in the endgame.",
+          "arrows": [
+            [
+              "h5",
+              "h6"
+            ]
+          ]
+        },
+        {
+          "ply": 89,
+          "title": "Defence complete",
+          "note": "White's king walks forward and the extra material wins. In the Albin, the defender's plan is to win the d4 pawn and survive to the endgame.",
+          "highlights": [
+            "g6"
+          ]
+        }
+      ]
+    }
+  ]
 }

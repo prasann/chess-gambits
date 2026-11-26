@@ -162,6 +162,205 @@
         ],
         "additionalProperties": false
       }
+    },
+    "modelGames": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "gambit-works",
+              "defense-holds"
+            ]
+          },
+          "white": {
+            "type": "string",
+            "minLength": 1
+          },
+          "black": {
+            "type": "string",
+            "minLength": 1
+          },
+          "event": {
+            "type": "string",
+            "minLength": 1
+          },
+          "site": {
+            "type": "string",
+            "minLength": 1
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 1800,
+            "maximum": 2100
+          },
+          "timeControl": {
+            "type": "string",
+            "enum": [
+              "classical",
+              "rapid",
+              "blitz"
+            ]
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "1-0",
+              "0-1",
+              "1/2-1/2"
+            ]
+          },
+          "moves": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "retrievedAt": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+              }
+            },
+            "required": [
+              "name",
+              "url",
+              "retrievedAt"
+            ],
+            "additionalProperties": false
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          },
+          "moments": {
+            "minItems": 4,
+            "maxItems": 6,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ply": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 60
+                },
+                "note": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 280
+                },
+                "idea": {
+                  "type": "string",
+                  "enum": [
+                    "idea",
+                    "structure",
+                    "pieces",
+                    "motifs",
+                    "declined",
+                    "caution"
+                  ]
+                },
+                "arrows": {
+                  "maxItems": 3,
+                  "type": "array",
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "array",
+                        "prefixItems": [
+                          {
+                            "type": "string",
+                            "pattern": "^[a-h][1-8]$"
+                          },
+                          {
+                            "type": "string",
+                            "pattern": "^[a-h][1-8]$"
+                          }
+                        ],
+                        "items": false,
+                        "minItems": 2,
+                        "maxItems": 2
+                      },
+                      {
+                        "type": "array",
+                        "prefixItems": [
+                          {
+                            "type": "string",
+                            "pattern": "^[a-h][1-8]$"
+                          },
+                          {
+                            "type": "string",
+                            "pattern": "^[a-h][1-8]$"
+                          },
+                          {
+                            "type": "string",
+                            "const": "red"
+                          }
+                        ],
+                        "items": false,
+                        "minItems": 3,
+                        "maxItems": 3
+                      }
+                    ]
+                  }
+                },
+                "highlights": {
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-h][1-8]$"
+                  }
+                }
+              },
+              "required": [
+                "ply",
+                "title",
+                "note"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "white",
+          "black",
+          "event",
+          "site",
+          "year",
+          "timeControl",
+          "result",
+          "moves",
+          "source",
+          "summary",
+          "moments"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "required": [

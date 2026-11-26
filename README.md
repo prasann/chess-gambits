@@ -45,15 +45,18 @@ The browser tests intentionally use the default repository subpath.
 Each repertoire includes accepted and declined ideas and original explanations
 of plans, pawn structures, piece placement, motifs, and practical cautions.
 Practice starts just after the gambit offer, with an optional setup replay.
+Each gambit also has two annotated master games: one where the gambit works and
+one where the defence holds. Step through the key moments, then tap **Practice
+from here** to play on from that position against Stockfish.
 The side you chose is always yours; the opponent can accept or decline.
 
 Tap a piece and then its destination on phones. Mouse dragging and keyboard
 square selection are also supported. Controls sit below the board; ideas and
 move history expand separately. Searches stop while the tab is hidden.
 
-The light theme pairs warm ivory with forest green; the dark theme uses deep
-evergreen and gold. Original, outlined ivory/ebony pieces and cream/sage board
-colors stay consistent in both themes so switching never reverses the sides.
+The Sunset theme pairs a warm parchment and charcoal board with wood tones,
+in light and dark variants. Choose the Lichess cburnett or merida pieces from
+the header.
 
 ### Honest limits
 

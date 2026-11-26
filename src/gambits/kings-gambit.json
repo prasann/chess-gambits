@@ -202,5 +202,199 @@
         "f6e4": 114
       }
     }
-  }
+  },
+  "modelGames": [
+    {
+      "id": "short-akopian-1997",
+      "kind": "gambit-works",
+      "white": "Nigel Short",
+      "black": "Vladimir Akopian",
+      "event": "Madrid",
+      "site": "Madrid",
+      "year": 1997,
+      "timeControl": "classical",
+      "result": "1-0",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d6 4. d4 g5 5. h4 g4 6. Ng1 Bh6 7. Nc3 c6 8. Nge2 Qf6 9. g3 fxg3 10. Nxg3 Bxc1 11. Rxc1 Qh6 12. Bd3 Qe3+ 13. Nce2 Ne7 14. Qd2 Qxd2+ 15. Kxd2 d5 16. Rce1 Be6 17. Nf4 O-O 18. exd5 Nxd5 19. Nxe6 fxe6 20. Rxe6 Nd7 21. Nf5 Kh8 22. Rf1 Rae8 23. Rxe8 Rxe8 24. c4 N5f6 25. Ng3 c5 26. d5 Kg7 27. Nf5+ Kh8 28. Nd6 Rf8 29. Re1 g3 30. Bf5 Nb6 31. b3 Ne8 32. Nxb7 Ng7 33. Bh3 Rf4 34. Nxc5 Rxh4 35. Bg2 Rh2 36. Re2 Nf5 37. Be4 Nd6 38. Bf3 Rh6 39. Ne6 Rf6 40. Bg2 Nd7 41. c5 Nf7 42. d6 Nfe5 43. Bd5 Rf5 44. c6 Nb6 45. Bg2 Rf2 46. Rxf2 gxf2 47. Ke2",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/pIV55Pi8",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "White never wins the f4 pawn back by force. Instead he undermines it, swaps into a queenless middlegame and shows that the lasting assets of the gambit—a strong centre and loose black pawns—still count when the attack is gone.",
+      "moments": [
+        {
+          "ply": 11,
+          "title": "A patient retreat",
+          "note": "Rather than sacrifice the knight, White simply steps back. Black has grabbed space with g5–g4, but those advanced pawns are now targets, and White still owns the centre with e4 and d4.",
+          "idea": "structure",
+          "highlights": [
+            "f4",
+            "g4"
+          ],
+          "arrows": [
+            [
+              "g1",
+              "e2"
+            ]
+          ]
+        },
+        {
+          "ply": 19,
+          "title": "Undermine, then recapture",
+          "note": "g3 forced the issue: the f4 pawn disappeared and a knight landed on g3. Material is level again, but White develops with gain of time while Black's kingside is full of holes.",
+          "idea": "motifs",
+          "highlights": [
+            "g4"
+          ],
+          "arrows": [
+            [
+              "g3",
+              "f5"
+            ]
+          ]
+        },
+        {
+          "ply": 29,
+          "title": "Queens off, edge stays",
+          "note": "Trading queens did not end White's pressure. Without queens the king is safe on d2, and the open e- and f-files plus Black's stranded g4 pawn still favour the gambit side.",
+          "idea": "caution",
+          "highlights": [
+            "d2",
+            "g4"
+          ]
+        },
+        {
+          "ply": 39,
+          "title": "A rook on the sixth",
+          "note": "After the exchange on e6, White's rook lands deep in Black's camp. The pressure comes from activity, not a mating attack—exactly the kind of edge a well-played gambit leaves behind.",
+          "idea": "pieces",
+          "highlights": [
+            "e6"
+          ],
+          "arrows": [
+            [
+              "e6",
+              "e8"
+            ]
+          ]
+        },
+        {
+          "ply": 63,
+          "title": "The queenside harvest",
+          "note": "Black's pieces drifted to the kingside, and the knight quietly collects queenside pawns. Converting an initiative often means switching targets once the defender overreacts.",
+          "highlights": [
+            "b7",
+            "c5"
+          ],
+          "arrows": [
+            [
+              "b7",
+              "c5"
+            ]
+          ]
+        },
+        {
+          "ply": 83,
+          "title": "Passed pawns decide",
+          "note": "The central pawns that White kept since the opening now roll forward together. The gambit's early centre has turned into a winning endgame asset.",
+          "idea": "structure",
+          "highlights": [
+            "c5",
+            "d6"
+          ],
+          "arrows": [
+            [
+              "d6",
+              "d7"
+            ],
+            [
+              "c5",
+              "c6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morozevich-kasparov-1995",
+      "kind": "defense-holds",
+      "white": "Alexander Morozevich",
+      "black": "Garry Kasparov",
+      "event": "PCA Intel Grand Prix",
+      "site": "Paris",
+      "year": 1995,
+      "timeControl": "rapid",
+      "result": "0-1",
+      "moves": "1. e4 e5 2. f4 exf4 3. Nf3 d6 4. d4 g5 5. h4 g4 6. Ng5 h6 7. Nxf7 Kxf7 8. Bxf4 Bg7 9. Bc4+ Ke8 10. O-O Nc6 11. Be3 Qxh4 12. Rf7 Rh7 13. e5 Na5 14. Bd3 Kxf7 15. Qf1+ Ke7 16. Bxh7 Be6 17. Nd2 Rf8 18. exd6+ cxd6 19. Qe2 Kd8 20. c3 Ne7 21. Re1 Bc4 22. Bf2 Rxf2 23. Qxf2 g3",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/Zac3PL6R",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "White goes all-in with a knight sacrifice on f7 and later a rook. Black takes what is offered, brings the king back to safety and counterattacks on the h-file. A lesson in how a gambit fails when the extra sacrifices do not create concrete threats.",
+      "moments": [
+        {
+          "ply": 13,
+          "title": "Doubling the stakes",
+          "note": "White gives a whole knight to pull Black's king into the open. Sacrifices like this only work if the attack lands quickly; otherwise Black is simply a piece up.",
+          "idea": "caution",
+          "highlights": [
+            "f7"
+          ]
+        },
+        {
+          "ply": 22,
+          "title": "Counterattack beats passivity",
+          "note": "Instead of only defending, Black's queen grabs the h-pawn and starts eyeing White's king. Every tempo White spends parrying threats is a tempo not spent attacking.",
+          "highlights": [
+            "h4"
+          ],
+          "arrows": [
+            [
+              "h4",
+              "h2",
+              "red"
+            ]
+          ]
+        },
+        {
+          "ply": 28,
+          "title": "Take it and hold on",
+          "note": "White threw in a rook on f7 as well. Black captures it: the king looks exposed, but White has too few pieces left to exploit it, and every trade now favours the defender.",
+          "highlights": [
+            "f7"
+          ]
+        },
+        {
+          "ply": 44,
+          "title": "Giving back to kill the attack",
+          "note": "Black returns the exchange on f2. When you are far ahead in material, giving some back to remove the attacker's best piece is a classic way to finish the defence.",
+          "highlights": [
+            "f2"
+          ]
+        },
+        {
+          "ply": 46,
+          "title": "The hunter becomes the hunted",
+          "note": "The g-pawn hits White's queen and opens the road to h2. White's king, not Black's, is now the one facing mate.",
+          "highlights": [
+            "g3",
+            "g1"
+          ],
+          "arrows": [
+            [
+              "h4",
+              "h2",
+              "red"
+            ],
+            [
+              "g3",
+              "f2",
+              "red"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
 }

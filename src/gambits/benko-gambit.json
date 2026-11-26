@@ -184,5 +184,190 @@
         "c4d5": 3
       }
     }
-  }
+  },
+  "modelGames": [
+    {
+      "id": "bareev-kasparov-1994",
+      "kind": "gambit-works",
+      "white": "Evgeny Bareev",
+      "black": "Garry Kasparov",
+      "event": "Linares",
+      "site": "Linares",
+      "year": 1994,
+      "timeControl": "classical",
+      "result": "0-1",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. Nf3 Bxa6 7. Nc3 d6 8. Nd2 Bg7 9. e4 Bxf1 10. Nxf1 Qa5 11. Bd2 O-O 12. Ne3 Nbd7 13. O-O Qa6 14. Qc2 Ne5 15. b3 Nfd7 16. f4 Nd3 17. a3 Bd4 18. Kh1 Rfc8 19. Rab1 c4 20. b4 Nf6 21. Ned1 Rcb8 22. Ne3 Rc8 23. b5 Qb6 24. Nxc4 Nf2+ 25. Rxf2 Rxc4 26. Rf3 Rxa3 27. Qb2 Nxe4 28. Qxa3 Nxd2 29. Qa2 Be3 30. Rc1 Qd4 31. b6 Rxc3",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/69P3RXc3",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "A textbook Benko. Black trades light-squared bishops, puts heavy pieces on the open queenside files and plants a knight on d3. The pressure eventually breaks White's queenside.",
+      "moments": [
+        {
+          "ply": 12,
+          "title": "Open files for the pawn",
+          "note": "Black is a pawn down, but the a- and b-files are open and the bishop on a6 is about to trade off White's best minor piece.",
+          "idea": "structure",
+          "highlights": [
+            "a6"
+          ],
+          "arrows": [
+            [
+              "a6",
+              "f1"
+            ]
+          ]
+        },
+        {
+          "ply": 26,
+          "title": "Heavy pieces on the queenside",
+          "note": "Queen on a6, rooks soon to follow. Black's pieces line up against a2 and b2, the targets the gambit created.",
+          "idea": "pieces",
+          "highlights": [
+            "a2",
+            "b2"
+          ],
+          "arrows": [
+            [
+              "a6",
+              "a2"
+            ]
+          ]
+        },
+        {
+          "ply": 32,
+          "title": "A knight on d3",
+          "note": "The knight lands on d3, deep in White's camp. With White's light-squared bishop gone, nothing can easily chase it away.",
+          "idea": "motifs",
+          "highlights": [
+            "d3"
+          ],
+          "arrows": [
+            [
+              "d3",
+              "f4"
+            ]
+          ]
+        },
+        {
+          "ply": 38,
+          "title": "The c-pawn joins",
+          "note": "...c4 supports the d3 knight and adds another lever on the queenside. Black is playing on the side where he has more open lines.",
+          "highlights": [
+            "c4",
+            "d3"
+          ]
+        },
+        {
+          "ply": 48,
+          "title": "A tactical blow",
+          "note": "Nf2+ forks the king and the e4 pawn. When pieces are active and well placed, tactics appear on their own.",
+          "highlights": [
+            "f2",
+            "h1"
+          ],
+          "arrows": [
+            [
+              "f2",
+              "h1",
+              "red"
+            ]
+          ]
+        },
+        {
+          "ply": 62,
+          "title": "The queenside collapses",
+          "note": "Black's pieces have broken through on the queenside and White's position falls apart. Patient pressure has paid for the gambit pawn many times over.",
+          "highlights": [
+            "c3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carlsen-bologan-2012",
+      "kind": "defense-holds",
+      "white": "Magnus Carlsen",
+      "black": "Viktor Bologan",
+      "event": "Biel",
+      "site": "Biel",
+      "year": 2012,
+      "timeControl": "classical",
+      "result": "1-0",
+      "moves": "1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. Nc3 Bxa6 7. e4 Bxf1 8. Kxf1 d6 9. Nf3 Bg7 10. g3 O-O 11. Kg2 Nbd7 12. Qe2 Qb6 13. a4 Rfb8 14. Nb5 Ne8 15. Bg5 Qd8 16. Ra3 Nb6 17. b3 Qd7 18. Ra2 f6 19. Bc1 f5 20. exf5 gxf5 21. Rd1 Nf6 22. Qe6+ Qxe6 23. dxe6 Ne4 24. Nh4 c4 25. bxc4 Nxc4 26. Nc7 Nc3 27. Nxa8 Nxa2 28. Nc7 Nc3 29. Rd3 Rc8 30. Nb5 Nxb5 31. axb5 Rc5 32. Rb3 Na5 33. Rb1 Bd4 34. b6 Nb7 35. Rb4 Bxf2 36. Kxf2 Rc2+ 37. Kf3 Rxc1 38. Nxf5 Rf1+ 39. Kg4 Nc5 40. b7",
+      "source": {
+        "name": "Lichess masters database",
+        "url": "https://lichess.org/kR4mY2Xe",
+        "retrievedAt": "2026-11-26"
+      },
+      "summary": "White accepts the pawn, gives up castling, then walks his king to g2. A knight on b5 blunts Black's queenside play. Once queens come off, White's extra material and passed pawns decide.",
+      "moments": [
+        {
+          "ply": 21,
+          "title": "Artificial castling",
+          "note": "The king walks to g2 behind the g3 pawn. It takes a few tempi, but White now has a safe king and an extra pawn.",
+          "highlights": [
+            "g2"
+          ],
+          "arrows": [
+            [
+              "f1",
+              "g2"
+            ]
+          ]
+        },
+        {
+          "ply": 27,
+          "title": "Block the b-file",
+          "note": "A knight on b5, backed by a4, blocks the file Black wanted to use. Blunting the open lines is the defender's main task against the Benko.",
+          "idea": "pieces",
+          "highlights": [
+            "b5",
+            "a4"
+          ]
+        },
+        {
+          "ply": 43,
+          "title": "Trading queens",
+          "note": "White offers the queen trade. Without queens, Black's activity counts for less and the extra pawn counts for more.",
+          "idea": "caution",
+          "highlights": [
+            "e6"
+          ]
+        },
+        {
+          "ply": 53,
+          "title": "Winning the exchange",
+          "note": "The knight takes the rook on a8. White has turned positional pressure into concrete material.",
+          "highlights": [
+            "a8"
+          ]
+        },
+        {
+          "ply": 67,
+          "title": "A passed b-pawn",
+          "note": "White's b-pawn is now passed and backed by the rook. Black's pieces must stop it, leaving the kingside defenceless.",
+          "highlights": [
+            "b6"
+          ],
+          "arrows": [
+            [
+              "b6",
+              "b7"
+            ]
+          ]
+        },
+        {
+          "ply": 79,
+          "title": "Promotion is near",
+          "note": "The pawn reaches b7. The defence held early on, and White's material edge decided the endgame.",
+          "highlights": [
+            "b7",
+            "b8"
+          ]
+        }
+      ]
+    }
+  ]
 }

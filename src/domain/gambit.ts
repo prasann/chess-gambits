@@ -1,5 +1,6 @@
 import { Chess, type Color } from 'chess.js'
 import { z } from 'zod'
+import { modelGameSchema, validateModelGames } from './modelGame'
 
 const text = z.string().trim().min(1)
 export const gambitSchema = z.strictObject({
@@ -29,6 +30,7 @@ export const gambitSchema = z.strictObject({
     total: z.number().int().positive(),
     counts: z.record(z.string().regex(/^[a-h][1-8][a-h][1-8][qrbn]?$/), z.number().int().positive()),
   })),
+  modelGames: z.array(modelGameSchema).optional(),
 })
 
 export type Gambit = z.infer<typeof gambitSchema>
@@ -122,6 +124,7 @@ export function validateGambit(input: unknown, requireFrequencies = true): Gambi
     }
   }
   visit(root, game)
+  validateModelGames(gambit)
   return gambit
 }
 
@@ -151,8 +154,7 @@ export function bookReply(gambit: Gambit, node: BookNode | undefined, game: Ches
   })), random)
 }
 
-export function undoDecision(gambit: Gambit, moves: readonly string[]) {
-  const floor = gambit.setup.length
+export function undoDecision(gambit: Gambit, moves: readonly string[], floor = gambit.setup.length) {
   let end = moves.length - 1
   while (end > floor && replay(moves.slice(0, end)).turn() !== playerColor(gambit)) end--
   return moves.slice(0, Math.max(floor, end))
