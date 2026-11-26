@@ -55,7 +55,7 @@ for (const [path, metadata] of Object.entries(lock.packages)) {
 }
 await writeFile('public/THIRD-PARTY.txt', notices)
 execFileSync('tar', ['-czf', `${directory}/app-source.tar.gz`,
-  'src', 'scripts', 'docs', 'tests', '.github', 'package.json', 'package-lock.json',
+  'src', 'scripts', 'docs', 'tests', '.github', 'public/pieces', 'package.json', 'package-lock.json',
   'tsconfig.json', 'vite.config.ts', 'eslint.config.js', 'playwright.config.ts',
   'index.html', 'README.md', 'CONTRIBUTING.md', 'LICENSE', 'LICENSE-MIT', '.gitignore', '.npmrc',
 ])
