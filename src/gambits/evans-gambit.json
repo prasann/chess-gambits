@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "id": "evans-gambit",
+  "name": "Evans Gambit",
+  "side": "white",
+  "subtitle": "Give the bishop a costly invitation.",
+  "character": "Development / Central breakthrough",
+  "ideas": {
+    "idea": "The wing pawn invites Black's bishop away from its useful diagonal. Chasing that bishop can help you build a central pawn duo while opening lines for your own pieces. The point is not to attack the bishop forever: spend the gained time on development and central activity.",
+    "structure": "A c-pawn advance supports the central break but temporarily takes away a natural knight square. If the centre opens, development matters more than a tidy pawn count. If it stays closed, the missing wing pawn can become a lasting weakness without giving your pieces useful lines.",
+    "pieces": "The bishop on c4 points toward the enemy king-side, and a queen can sometimes join pressure on f7 from the b3 diagonal. Castle to connect king safety with rook activity. The queen-side knight needs a route that respects your own central pawns.",
+    "motifs": "Central pawn breaks can uncover attacks on the bishop or king. Pressure on f7 can make a developing move come with a threat, but an early queen raid may itself lose time. Count defenders and escape squares before treating a familiar attacking picture as a forced win.",
+    "declined": "When Black retreats the bishop without taking, your wing pawn has gained space rather than sacrificed material. Build a healthy centre and complete development. Do not force a second pawn advance simply because you came to practice an attack.",
+    "caution": "Black may return the pawn to finish development. Accept that the position has changed: a good centre and active pieces are useful outcomes even when there is no immediate mating attack."
+  },
+  "setup": [
+    "e4",
+    "e5",
+    "Nf3",
+    "Nc6",
+    "Bc4",
+    "Bc5",
+    "b4"
+  ],
+  "lines": [
+    {
+      "name": "Accepted: bishop retreats to a5",
+      "moves": [
+        "Bxb4",
+        "c3",
+        "Ba5",
+        "d4",
+        "exd4",
+        "O-O",
+        "d6",
+        "cxd4"
+      ]
+    },
+    {
+      "name": "Accepted: bishop retreats to e7",
+      "moves": [
+        "Bxb4",
+        "c3",
+        "Be7",
+        "d4",
+        "Na5",
+        "Be2",
+        "exd4",
+        "cxd4"
+      ]
+    },
+    {
+      "name": "Declined: retreat to b6",
+      "moves": [
+        "Bb6",
+        "a4",
+        "a6",
+        "Nc3",
+        "Nf6",
+        "Nd5",
+        "Nxd5",
+        "exd5"
+      ]
+    }
+  ],
+  "source": {
+    "name": "Lichess masters opening explorer",
+    "url": "https://explorer.lichess.ovh/masters",
+    "retrievedAt": "2026-11-26",
+    "note": "Recorded master games, not a club-rating sample. Reply weights are conditional on the curated continuations. Counts are factual aggregates; explanations are original."
+  },
+  "frequencies": {
+    "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq -": {
+      "total": 1767,
+      "counts": {
+        "c5b4": 1526,
+        "c5b6": 222,
+        "c5e7": 9,
+        "d7d5": 8,
+        "c5d6": 1,
+        "c6b4": 1
+      }
+    },
+    "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/2P2N2/P2P1PPP/RNBQK2R b KQkq -": {
+      "total": 1526,
+      "counts": {
+        "b4a5": 930,
+        "b4e7": 448,
+        "b4d6": 108,
+        "b4c5": 38,
+        "b4f8": 2
+      }
+    },
+    "r1bqk1nr/pppp1ppp/2n5/b3p3/2BPP3/2P2N2/P4PPP/RNBQK2R b KQkq -": {
+      "total": 879,
+      "counts": {
+        "d7d6": 477,
+        "e5d4": 366,
+        "b7b5": 12,
+        "d8e7": 12,
+        "a5b6": 6,
+        "d8f6": 3,
+        "g8f6": 1,
+        "c6d4": 1,
+        "g8e7": 1
+      }
+    },
+    "r1bqk1nr/pppp1ppp/2n5/b7/2BpP3/2P2N2/P4PPP/RNBQ1RK1 b kq -": {
+      "total": 212,
+      "counts": {
+        "g8e7": 114,
+        "g8f6": 41,
+        "d7d6": 20,
+        "d4d3": 15,
+        "d4c3": 12,
+        "a5b6": 10
+      }
+    },
+    "r1bqk1nr/ppppbppp/2n5/4p3/2BPP3/2P2N2/P4PPP/RNBQK2R b KQkq -": {
+      "total": 420,
+      "counts": {
+        "c6a5": 374,
+        "d7d6": 27,
+        "e5d4": 15,
+        "e7f6": 3,
+        "g8f6": 1
+      }
+    },
+    "r1bqk1nr/ppppbppp/8/n3p3/3PP3/2P2N2/P3BPPP/RNBQK2R b KQkq -": {
+      "total": 170,
+      "counts": {
+        "d7d6": 83,
+        "e5d4": 80,
+        "d7d5": 4,
+        "g8f6": 1,
+        "f7f5": 1,
+        "b7b6": 1
+      }
+    },
+    "r1bqk1nr/pppp1ppp/1bn5/4p3/PPB1P3/5N2/2PP1PPP/RNBQK2R b KQkq -": {
+      "total": 178,
+      "counts": {
+        "a7a6": 159,
+        "a7a5": 19
+      }
+    },
+    "r1bqk1nr/1ppp1ppp/pbn5/4p3/PPB1P3/2N2N2/2PP1PPP/R1BQK2R b KQkq -": {
+      "total": 78,
+      "counts": {
+        "g8f6": 59,
+        "d7d6": 19
+      }
+    },
+    "r1bqk2r/1ppp1ppp/pbn2n2/3Np3/PPB1P3/5N2/2PP1PPP/R1BQK2R b KQkq -": {
+      "total": 40,
+      "counts": {
+        "f6d5": 25,
+        "d7d6": 11,
+        "e8g8": 2,
+        "b6a7": 2
+      }
+    }
+  }
+}

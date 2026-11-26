@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "id": "benko-gambit",
+  "name": "Benko Gambit",
+  "side": "black",
+  "subtitle": "A pawn today. Pressure that lasts.",
+  "character": "Queen-side files / Long-term compensation",
+  "ideas": {
+    "idea": "Unlike a quick king hunt, the Benko seeks lasting queen-side activity. Let White take a wing pawn, then challenge the pawn that arrives on b5. Open files and a long bishop diagonal can give your pieces clear work even after queens are exchanged.",
+    "structure": "White's advanced central pawn gains space but also makes the queen-side structure less flexible. When the a- and b-files open, White's remaining queen-side pawns can become targets. Your own centre needs care: queen-side activity is not a reason to ignore a central breakthrough.",
+    "pieces": "The king's bishop usually develops on the long diagonal. Rooks work on the open queen-side files, and knights can support pressure against b2 or help control the centre. Connecting the rooks is often more valuable than rushing a premature invasion.",
+    "motifs": "Watch converging pressure on a queen-side pawn, exchanges that remove a key defender, and entry squares along the open files. These are usually positional threats rather than a forced tactical sequence. Do not confuse an attractive diagonal with a bishop that actually has a target.",
+    "declined": "If White protects or advances the b-pawn, or declines the first capture, the files may remain closed. Attack the relevant pawn chain and develop normally. An early central pawn push can change the character entirely; meet that challenge before following a memorized queen-side plan.",
+    "caution": "White can return material or use the centre to blunt the pressure. The gambit does not guarantee a favorable endgame: if your rooks cannot find targets, the missing pawn still counts."
+  },
+  "setup": [
+    "d4",
+    "Nf6",
+    "c4",
+    "c5",
+    "d5",
+    "b5"
+  ],
+  "lines": [
+    {
+      "name": "Accepted: open both files",
+      "moves": [
+        "cxb5",
+        "a6",
+        "bxa6",
+        "Bxa6",
+        "Nc3",
+        "d6",
+        "Nf3",
+        "g6"
+      ]
+    },
+    {
+      "name": "Half-accepted: hold the pawn",
+      "moves": [
+        "cxb5",
+        "a6",
+        "b6",
+        "d6",
+        "Nc3",
+        "g6",
+        "e4",
+        "Bg7"
+      ]
+    },
+    {
+      "name": "Declined: develop the knight",
+      "moves": [
+        "Nf3",
+        "Bb7",
+        "Qc2",
+        "e6",
+        "e4",
+        "exd5",
+        "cxd5",
+        "c4"
+      ]
+    }
+  ],
+  "source": {
+    "name": "Lichess masters opening explorer",
+    "url": "https://explorer.lichess.ovh/masters",
+    "retrievedAt": "2026-11-26",
+    "note": "Recorded master games, not a club-rating sample. Reply weights are conditional on the curated continuations. Counts are factual aggregates; explanations are original."
+  },
+  "frequencies": {
+    "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq -": {
+      "total": 17139,
+      "counts": {
+        "c4b5": 13155,
+        "g1f3": 2137,
+        "d1c2": 682,
+        "b1d2": 517,
+        "a2a4": 375,
+        "c1g5": 97,
+        "f2f3": 87,
+        "b1c3": 23,
+        "g2g3": 21,
+        "e2e4": 21,
+        "e2e3": 10,
+        "b2b3": 7,
+        "b1a3": 2,
+        "g2g4": 2,
+        "c1f4": 1,
+        "f2f4": 1,
+        "a2a3": 1
+      }
+    },
+    "rnbqkb1r/3ppppp/p4n2/1PpP4/8/8/PP2PPPP/RNBQKBNR w KQkq -": {
+      "total": 13030,
+      "counts": {
+        "b5a6": 7178,
+        "b5b6": 2322,
+        "e2e3": 2010,
+        "f2f3": 1021,
+        "b1c3": 486,
+        "d1c2": 4,
+        "e2e4": 3,
+        "g2g4": 3,
+        "g2g3": 1,
+        "g1f3": 1,
+        "a2a3": 1
+      }
+    },
+    "rn1qkb1r/3ppppp/b4n2/2pP4/8/8/PP2PPPP/RNBQKBNR w KQkq -": {
+      "total": 2008,
+      "counts": {
+        "b1c3": 1794,
+        "g2g3": 183,
+        "g1f3": 17,
+        "b2b3": 11,
+        "f2f4": 1,
+        "f2f3": 1,
+        "e2e3": 1
+      }
+    },
+    "rn1qkb1r/4pppp/b2p1n2/2pP4/8/2N5/PP2PPPP/R1BQKBNR w KQkq -": {
+      "total": 1118,
+      "counts": {
+        "g1f3": 506,
+        "e2e4": 311,
+        "g2g3": 258,
+        "f2f4": 39,
+        "e2e3": 3,
+        "c1g5": 1
+      }
+    },
+    "rnbqkb1r/4pppp/pP1p1n2/2pP4/8/8/PP2PPPP/RNBQKBNR w KQkq -": {
+      "total": 782,
+      "counts": {
+        "b1c3": 761,
+        "e2e4": 10,
+        "a2a4": 7,
+        "g1f3": 2,
+        "d1b3": 1,
+        "f2f3": 1
+      }
+    },
+    "rnbqkb1r/4pp1p/pP1p1np1/2pP4/8/2N5/PP2PPPP/R1BQKBNR w KQkq -": {
+      "total": 248,
+      "counts": {
+        "e2e4": 132,
+        "g1f3": 77,
+        "a2a4": 27,
+        "d1b3": 11,
+        "g2g3": 1
+      }
+    },
+    "rn1qkb1r/pb1ppppp/5n2/1ppP4/2P5/5N2/PP2PPPP/RNBQKB1R w KQkq -": {
+      "total": 732,
+      "counts": {
+        "a2a4": 335,
+        "d1c2": 148,
+        "b1d2": 97,
+        "b1c3": 32,
+        "f3d2": 27,
+        "c1g5": 21,
+        "c1f4": 15,
+        "e2e3": 14,
+        "d1b3": 14,
+        "g2g3": 9,
+        "a2a3": 8,
+        "c4b5": 7,
+        "b2b3": 3,
+        "e2e4": 2
+      }
+    },
+    "rn1qkb1r/pb1p1ppp/4pn2/1ppP4/2P5/5N2/PPQ1PPPP/RNB1KB1R w KQkq -": {
+      "total": 20,
+      "counts": {
+        "e2e4": 16,
+        "d5e6": 4
+      }
+    },
+    "rn1qkb1r/pb1p1ppp/5n2/1ppp4/2P1P3/5N2/PPQ2PPP/RNB1KB1R w KQkq -": {
+      "total": 6,
+      "counts": {
+        "e4d5": 3,
+        "c4d5": 3
+      }
+    }
+  }
+}

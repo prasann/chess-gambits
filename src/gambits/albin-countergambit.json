@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "id": "albin-countergambit",
+  "name": "Albin Countergambit",
+  "side": "black",
+  "subtitle": "Answer a wing offer with a central wedge.",
+  "character": "Central space / Tactical counterplay",
+  "ideas": {
+    "idea": "Challenge White's centre immediately instead of patiently defending it. If White captures, an advanced d-pawn can gain space, obstruct development, and make ordinary-looking moves uncomfortable. Your compensation relies on active pieces supporting that wedge.",
+    "structure": "The advanced d-pawn is both an asset and a potential target. It restricts White, but it can become isolated if you fail to develop. White may keep the extra e-pawn, give it back to finish development, or attack your centre from the sides.",
+    "pieces": "Develop the queen-side knight and bishops actively, with pressure toward the centre and White's king. The light-squared bishop can use an open diagonal; decide where your king belongs from the concrete position rather than assuming opposite-side castling is mandatory.",
+    "motifs": "A pawn near the enemy back rank creates unusual tactical possibilities. In the Lasker-trap family, a bishop check and an underpromotion can exploit careless development; this is a warning to calculate, not a guarantee that White will cooperate. Also watch pins and attacks against a king still in the centre.",
+    "declined": "If White does not take, resolve the central tension on its merits and develop. You may get a normal material balance with active central play. Do not push an unsupported pawn just to imitate the accepted variation.",
+    "caution": "White has sound ways to return material, blockade the wedge, and complete development. If your activity runs out, reassess the pawn structure instead of searching indefinitely for a trap."
+  },
+  "setup": [
+    "d4",
+    "d5",
+    "c4",
+    "e5"
+  ],
+  "lines": [
+    {
+      "name": "Accepted: king-side fianchetto",
+      "moves": [
+        "dxe5",
+        "d4",
+        "Nf3",
+        "Nc6",
+        "g3",
+        "Be6",
+        "Nbd2",
+        "Qd7"
+      ]
+    },
+    {
+      "name": "Accepted: queen-side space",
+      "moves": [
+        "dxe5",
+        "d4",
+        "Nf3",
+        "Nc6",
+        "a3",
+        "Be6",
+        "Nbd2",
+        "Qd7"
+      ]
+    },
+    {
+      "name": "Declined: develop first",
+      "moves": [
+        "Nf3",
+        "e4",
+        "Nfd2",
+        "c6",
+        "Nc3",
+        "Nf6",
+        "e3",
+        "Bd6"
+      ]
+    }
+  ],
+  "source": {
+    "name": "Lichess masters opening explorer",
+    "url": "https://explorer.lichess.ovh/masters",
+    "retrievedAt": "2026-11-26",
+    "note": "Recorded master games, not a club-rating sample. Reply weights are conditional on the curated continuations. Counts are factual aggregates; explanations are original."
+  },
+  "frequencies": {
+    "rnbqkbnr/ppp2ppp/8/3pp3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq -": {
+      "total": 1504,
+      "counts": {
+        "d4e5": 1366,
+        "e2e3": 102,
+        "c4d5": 15,
+        "b1c3": 11,
+        "g1f3": 9,
+        "e2e4": 1
+      }
+    },
+    "rnbqkbnr/ppp2ppp/8/4P3/2Pp4/8/PP2PPPP/RNBQKBNR w KQkq -": {
+      "total": 1300,
+      "counts": {
+        "g1f3": 1196,
+        "a2a3": 63,
+        "e2e4": 30,
+        "g2g3": 3,
+        "b1d2": 3,
+        "e2e3": 2,
+        "c1f4": 2,
+        "d1b3": 1
+      }
+    },
+    "r1bqkbnr/ppp2ppp/2n5/4P3/2Pp4/5N2/PP2PPPP/RNBQKB1R w KQkq -": {
+      "total": 1221,
+      "counts": {
+        "g2g3": 621,
+        "a2a3": 413,
+        "b1d2": 163,
+        "c1f4": 13,
+        "c1g5": 6,
+        "e2e3": 2,
+        "h2h3": 1,
+        "c1d2": 1,
+        "b1a3": 1
+      }
+    },
+    "r2qkbnr/ppp2ppp/2n1b3/4P3/2Pp4/5NP1/PP2PP1P/RNBQKB1R w KQkq -": {
+      "total": 143,
+      "counts": {
+        "b1d2": 114,
+        "f1g2": 12,
+        "b2b3": 9,
+        "d1a4": 6,
+        "d1b3": 2
+      }
+    },
+    "r2qkbnr/ppp2ppp/2n1b3/4P3/2Pp4/P4N2/1P2PPPP/RNBQKB1R w KQkq -": {
+      "total": 45,
+      "counts": {
+        "e2e3": 21,
+        "b1d2": 20,
+        "d1d3": 2,
+        "d1b3": 1,
+        "e2e4": 1
+      }
+    },
+    "rnbqkbnr/ppp2ppp/8/3p4/2PPp3/5N2/PP2PPPP/RNBQKB1R w KQkq -": {
+      "total": 6,
+      "counts": {
+        "f3d2": 4,
+        "f3g5": 1,
+        "f3g1": 1
+      }
+    },
+    "rnbqkbnr/pp3ppp/2p5/3p4/2PPp3/8/PP1NPPPP/RNBQKB1R w KQkq -": {
+      "total": 3,
+      "counts": {
+        "b1c3": 3
+      }
+    },
+    "rnbqkb1r/pp3ppp/2p2n2/3p4/2PPp3/2N5/PP1NPPPP/R1BQKB1R w KQkq -": {
+      "total": 5,
+      "counts": {
+        "c4d5": 3,
+        "e2e3": 2
+      }
+    }
+  }
+}

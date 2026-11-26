@@ -1,0 +1,46 @@
+{
+  "name": "chess-gambits",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "assets": "node scripts/prepare-engine.mjs",
+    "predev": "npm run assets",
+    "dev": "vite --host 0.0.0.0",
+    "validate": "tsx scripts/validate.ts",
+    "schema": "tsx scripts/schema.ts",
+    "source:weights": "tsx scripts/source-weights.ts",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:browser": "playwright test",
+    "build": "npm run assets && npm run validate && tsc -b && vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "chess.js": "1.4.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-chessboard": "5.12.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "globals": "^16.5.0",
+    "stockfish": "19.0.1",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.0",
+    "vite": "7.3.8",
+    "vitest": "4.0.18"
+  }
+}

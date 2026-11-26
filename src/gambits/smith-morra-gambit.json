@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "id": "smith-morra-gambit",
+  "name": "Smith-Morra Gambit",
+  "side": "white",
+  "subtitle": "Open the centre. Bring everyone.",
+  "character": "Fast development / Open-file pressure",
+  "ideas": {
+    "idea": "Offer a second pawn so your queen-side knight can develop by recapturing. White gives up a central pawn but gets a lead in development and open lines. Your job is to make those lines matter before Black builds a compact defensive position.",
+    "structure": "The c- and d-files are potential routes into Black's position. Black often keeps a d6/e6 shell: sturdy, but sometimes cramped until the pieces find squares. Pawn breaks can change everything, so watch Black's freeing central advances rather than only the extra pawn.",
+    "pieces": "Develop both knights, put a bishop on an active diagonal, and castle. Rooks often belong on the central open files; the queen can support them without becoming the first attacker. Coordinate the whole army before spending more material.",
+    "motifs": "Pins on a central file, pressure against d6, and a knight arriving with tempo are recurring opportunities. Black also has counterplay: queen attacks on the queen-side and tactical jumps by a knight can punish loose pieces. Check your queen's safety before pursuing a tempting pawn.",
+    "declined": "A knight-development decline can lead to positions resembling a c3 Sicilian, while a pawn advance asks you to use your space sensibly. In either case you may have equal material rather than a gambit attack. Take the useful centre and develop; do not sacrifice again just to recreate the accepted line.",
+    "caution": "Exchanging active pieces indiscriminately can leave you simply a pawn down. Still, refusing every trade is not a plan: evaluate which pieces actually sustain your pressure."
+  },
+  "setup": [
+    "e4",
+    "c5",
+    "d4",
+    "cxd4",
+    "c3"
+  ],
+  "lines": [
+    {
+      "name": "Accepted: classical development",
+      "moves": [
+        "dxc3",
+        "Nxc3",
+        "Nc6",
+        "Nf3",
+        "d6",
+        "Bc4",
+        "e6",
+        "O-O"
+      ]
+    },
+    {
+      "name": "Accepted: early e6",
+      "moves": [
+        "dxc3",
+        "Nxc3",
+        "e6",
+        "Nf3",
+        "Nc6",
+        "Bc4",
+        "a6",
+        "O-O"
+      ]
+    },
+    {
+      "name": "Declined: knight counterattack",
+      "moves": [
+        "Nf6",
+        "e5",
+        "Nd5",
+        "Nf3",
+        "Nc6",
+        "cxd4",
+        "d6",
+        "Bc4"
+      ]
+    },
+    {
+      "name": "Declined: close the centre",
+      "moves": [
+        "d3",
+        "Bxd3",
+        "Nc6",
+        "Nf3",
+        "d6",
+        "O-O",
+        "Nf6",
+        "Re1"
+      ]
+    }
+  ],
+  "source": {
+    "name": "Lichess masters opening explorer",
+    "url": "https://explorer.lichess.ovh/masters",
+    "retrievedAt": "2026-11-26",
+    "note": "Recorded master games, not a club-rating sample. Reply weights are conditional on the curated continuations. Counts are factual aggregates; explanations are original."
+  },
+  "frequencies": {
+    "rnbqkbnr/pp1ppppp/8/8/3pP3/2P5/PP3PPP/RNBQKBNR b KQkq -": {
+      "total": 2943,
+      "counts": {
+        "d4c3": 1609,
+        "g8f6": 736,
+        "d4d3": 359,
+        "d7d5": 148,
+        "g7g6": 46,
+        "e7e5": 13,
+        "d8a5": 11,
+        "b8c6": 8,
+        "d7d6": 6,
+        "e7e6": 5,
+        "d8c7": 1,
+        "b7b6": 1
+      }
+    },
+    "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PP3PPP/R1BQKBNR b KQkq -": {
+      "total": 1602,
+      "counts": {
+        "b8c6": 1177,
+        "e7e6": 297,
+        "d7d6": 99,
+        "a7a6": 23,
+        "g7g6": 3,
+        "g8f6": 2,
+        "h7h6": 1
+      }
+    },
+    "r1bqkbnr/pp1ppppp/2n5/8/4P3/2N2N2/PP3PPP/R1BQKB1R b KQkq -": {
+      "total": 1179,
+      "counts": {
+        "e7e6": 631,
+        "d7d6": 493,
+        "g7g6": 31,
+        "a7a6": 16,
+        "g8f6": 5,
+        "d8c7": 2,
+        "e7e5": 1
+      }
+    },
+    "r1bqkbnr/pp2pppp/2np4/8/2B1P3/2N2N2/PP3PPP/R1BQK2R b KQkq -": {
+      "total": 565,
+      "counts": {
+        "e7e6": 273,
+        "a7a6": 257,
+        "g8f6": 27,
+        "g7g6": 4,
+        "e7e5": 2,
+        "c8d7": 1,
+        "h7h6": 1
+      }
+    },
+    "rnbqkbnr/pp1p1ppp/4p3/8/4P3/2N2N2/PP3PPP/R1BQKB1R b KQkq -": {
+      "total": 341,
+      "counts": {
+        "a7a6": 144,
+        "b8c6": 130,
+        "d7d6": 32,
+        "f8c5": 30,
+        "g8e7": 2,
+        "f8b4": 2,
+        "f8e7": 1
+      }
+    },
+    "r1bqkbnr/pp1p1ppp/2n1p3/8/2B1P3/2N2N2/PP3PPP/R1BQK2R b KQkq -": {
+      "total": 750,
+      "counts": {
+        "a7a6": 416,
+        "f8b4": 94,
+        "d8c7": 91,
+        "d7d6": 78,
+        "g8f6": 30,
+        "g8e7": 22,
+        "f8c5": 15,
+        "f8e7": 4
+      }
+    },
+    "rnbqkb1r/pp1ppppp/5n2/4P3/3p4/2P5/PP3PPP/RNBQKBNR b KQkq -": {
+      "total": 726,
+      "counts": {
+        "f6d5": 726
+      }
+    },
+    "rnbqkb1r/pp1ppppp/8/3nP3/3p4/2P2N2/PP3PPP/RNBQKB1R b KQkq -": {
+      "total": 7034,
+      "counts": {
+        "b8c6": 3745,
+        "e7e6": 2542,
+        "d7d6": 691,
+        "b7b6": 27,
+        "g7g6": 12,
+        "d5b6": 8,
+        "d8c7": 5,
+        "d4d3": 2,
+        "d5c7": 1,
+        "d8a5": 1
+      }
+    },
+    "r1bqkb1r/pp1ppppp/2n5/3nP3/3P4/5N2/PP3PPP/RNBQKB1R b KQkq -": {
+      "total": 3602,
+      "counts": {
+        "d7d6": 3423,
+        "e7e6": 120,
+        "g7g6": 57,
+        "b7b5": 1,
+        "d5b6": 1
+      }
+    },
+    "rnbqkbnr/pp1ppppp/8/8/4P3/2PB4/PP3PPP/RNBQK1NR b KQkq -": {
+      "total": 275,
+      "counts": {
+        "b8c6": 179,
+        "d7d6": 46,
+        "g7g6": 35,
+        "e7e6": 10,
+        "d8c7": 3,
+        "e7e5": 2
+      }
+    },
+    "r1bqkbnr/pp1ppppp/2n5/8/4P3/2PB1N2/PP3PPP/RNBQK2R b KQkq -": {
+      "total": 95,
+      "counts": {
+        "d7d6": 58,
+        "g7g6": 28,
+        "d7d5": 3,
+        "d8c7": 3,
+        "g8f6": 1,
+        "e7e6": 1,
+        "e7e5": 1
+      }
+    },
+    "r1bqkbnr/pp2pppp/2np4/8/4P3/2PB1N2/PP3PPP/RNBQ1RK1 b kq -": {
+      "total": 27,
+      "counts": {
+        "g7g6": 14,
+        "g8f6": 12,
+        "e7e5": 1
+      }
+    }
+  }
+}
